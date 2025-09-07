@@ -37,7 +37,7 @@ public class Main {
         boolean containsGo = enteredName.contains("B");
         System.out.println("Does name contain \'go\'? - " + containsGo);
 
-        String updatedMessage = message.replace('n','N');
+        String updatedMessage = message.replace('n', 'N');
         System.out.println("Updated message: " + updatedMessage);
 
         String lowerCaseString = updatedMessage.toLowerCase();
