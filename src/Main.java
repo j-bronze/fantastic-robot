@@ -32,18 +32,25 @@ public class Main {
 //        }
 
 //task2
-        String userValue = "";
-        //Scanner scanner = new Scanner(System.in);
-
-        while (!(userValue.equalsIgnoreCase("Exit"))){
-            System.out.print("Please enter something: ");
-            userValue = scanner.nextLine();
-        }
-        System.out.println("You're entered: " + userValue);
+//        String userValue = "";
+//        //Scanner scanner = new Scanner(System.in);
+//
+//        while (!(userValue.equalsIgnoreCase("Exit"))){
+//            System.out.print("Please enter something: ");
+//            userValue = scanner.nextLine();
+//        }
+//        System.out.println("You're entered: " + userValue);
 
 
 //task3
-
+        //Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a number: ");
+        int x = scanner.nextInt();
+        int sum = 0;
+        for (int i = 0; i<= x; i++){
+            sum += i;
+        }
+        System.out.printf("THe sum of all numbers from 0 to %d is %d", x, sum);
 
 
 
