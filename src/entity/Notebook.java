@@ -4,13 +4,12 @@ public class Notebook extends Pad{
     private String pagePattern;
     private boolean isDatedPages;
 
+    public Notebook () { }
+
     public Notebook(String pagePattern, boolean isDatedPages){
-        super(padType, paper, cover, binding, width, height, density, sheetsQuantity);
         this.pagePattern = pagePattern;
         this.isDatedPages = false;
     }
-//    public Notebook(){
-//    }
 
     public String getPagePattern(){
         return pagePattern;

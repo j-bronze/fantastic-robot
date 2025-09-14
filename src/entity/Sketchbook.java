@@ -3,6 +3,8 @@ package entity;
 public class Sketchbook extends Pad{
     private String pageColor;
 
+    public Sketchbook(){}
+
     public Sketchbook(String pageColor){
         this.pageColor = pageColor;
     }
