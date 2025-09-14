@@ -66,11 +66,11 @@ public class Main {
         String[] Channels = {"", "Discovery", "National Geographic", "Euronews", "Eurosport"};
 
         while (userInputChannel != 0) {
-            if (userInputChannel <= Channels.length && userInputChannel > 0) {
+            if (userInputChannel < Channels.length && userInputChannel > 0) {
                 System.out.println("Your choice is: " + Channels[userInputChannel] + "\nPlease choose one more: ");
                 userInputChannel = scanner.nextInt();
             }
-            if (userInputChannel > Channels.length || userInputChannel < 0) {
+            if (userInputChannel >= Channels.length || userInputChannel < 0) {
                 System.out.println("Unknown channel! Choose another one: ");
                 userInputChannel = scanner.nextInt();
             }
