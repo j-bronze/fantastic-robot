@@ -1,5 +1,7 @@
+package entity;
+
 public class Pad {
-    String padName;
+    private String padType;
     private String paper;
     private String cover;
     private String binding;
@@ -9,9 +11,9 @@ public class Pad {
     private int sheetsQuantity;
     private double padWeight;
 
-    public Pad (String padName, String paper, String cover, String binding, int width, int height, int density,
+    public Pad (String padType, String paper, String cover, String binding, int width, int height, int density,
                 int sheetsQuantity){
-        this.padName = padName;
+        this.padType = padType;
         this.paper = paper;
         this.cover = cover;
         this.binding = binding;
@@ -22,11 +24,16 @@ public class Pad {
         CalcPadWeight();
     }
 
+//    public Pad() {
+//    }
 
     public String getInfo(){
         return String.format("%s\nPaper: %s\nCover: %s\nBlinding: %s\nSize: %dx%dmm\nPaper density: %dg/m2\n" +
-                        "Sheets quantity: %d", padName, paper, cover, binding, width, height, density, sheetsQuantity);
-    };
+                        "Sheets quantity: %d", padType, paper, cover, binding, width, height, density, sheetsQuantity);
+    }
+    public String getPadType(){
+        return padType;
+    }
     public String getPaper(){
         return paper;
     }
@@ -49,6 +56,9 @@ public class Pad {
         return sheetsQuantity;
     }
 
+    public void setPadType(String padType){
+        this.padType = padType;
+    }
     public void setPaper(String paper){
         this.paper = paper;
     }
