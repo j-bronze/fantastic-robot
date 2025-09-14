@@ -12,12 +12,10 @@ public class Main {
         System.out.println(startMessage);
         int userInput = scanner.nextInt();
 
-        if (userInput < 0 || userInput > 100) {
-            do {
-                System.out.println(warningMessage);
-                System.out.println(startMessage);
-                userInput = scanner.nextInt();
-            } while (!(userInput >= 0 && userInput <= 100));
+        while (!(userInput >= 0 && userInput <= 100)) {
+            System.out.println(warningMessage);
+            System.out.println(startMessage);
+            userInput = scanner.nextInt();
         }
         if (userInput >= 90) {
             System.out.println("Your grade is A!");
@@ -68,11 +66,11 @@ public class Main {
         String[] Channels = {"", "Discovery", "National Geographic", "Euronews", "Eurosport"};
 
         while (userInputChannel != 0) {
-            while (userInputChannel <= Channels.length && userInputChannel > 0) {
+            if (userInputChannel <= Channels.length && userInputChannel > 0) {
                 System.out.println("Your choice is: " + Channels[userInputChannel] + "\nPlease choose one more: ");
                 userInputChannel = scanner.nextInt();
             }
-            while (userInputChannel > Channels.length || userInputChannel < 0) {
+            if (userInputChannel > Channels.length || userInputChannel < 0) {
                 System.out.println("Unknown channel! Choose another one: ");
                 userInputChannel = scanner.nextInt();
             }
