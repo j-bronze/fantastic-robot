@@ -134,8 +134,8 @@ public class Main {
         sketchbook.setDensity(density);
         sketchbook.setSheetsQuantity(sheetsQuantity);
         sketchbook.setPageColor(pageColor);
-        System.out.println(sketchbook.getPadWeight());
         System.out.println(sketchbook.getInfo());
+        System.out.println(sketchbook.getPadWeight());
 
         System.out.println();
 
@@ -147,8 +147,7 @@ public class Main {
         notebook.setDensity(density);
         notebook.setSheetsQuantity(sheetsQuantity);
         notebook.setPagePattern(pagePattern);
-        System.out.println(notebook.getPadWeight());
         System.out.println(notebook.getInfo());
-
+        System.out.println(notebook.getPadWeight());
     }
 }
