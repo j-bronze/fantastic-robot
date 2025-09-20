@@ -7,7 +7,9 @@ public class Notebook extends Pad {
     public Notebook() {
     }
 
-    public Notebook(String pagePattern, boolean isDatedPages) {
+    public Notebook(String padType, String cover, String binding, int width, int height, int density,
+                    int sheetsQuantity, String pagePattern, boolean isDatedPages) {
+        super();
         this.pagePattern = pagePattern;
         this.isDatedPages = false;
     }
@@ -27,4 +29,14 @@ public class Notebook extends Pad {
     public void setIsDatedPages(boolean isDatedPages) {
         this.isDatedPages = isDatedPages;
     }
+
+
+    @Override
+    public String getInfo() {
+        return String.format("%s\nCover: %s\nBlinding: %s\nSize: %dx%dmm\nPaper density: %dg/m2\nSheets quantity: %d\n" +
+                        "Pages color: %d\nPage pattern: &d", getPadType(), super.getCover(), super.getBinding(),
+                super.getWidth(), super.getHeight(), super.getDensity(), super.getSheetsQuantity(),
+                super.getPadWeight(), pagePattern);
+    }
 }
+

@@ -83,5 +83,6 @@ public class Pad {
     public String getPadWeight (){
         return String.format("Weight: %fg", padWeight);
     };
+    //public double getPadWeight (){return padWeight;};
 
 }
