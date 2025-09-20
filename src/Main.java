@@ -8,12 +8,22 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        String padType;
+        String pageColor = "white";
+        String pagePattern = "none";
+        String cover;
+        String binding;
+        int width;
+        int height;
+        int density;
+        int sheetsQuantity;
+        Sketchbook sketchbook = new Sketchbook();
+        Notebook notebook = new Notebook();
 
         //ask padType
-        String[] PadTypes = {"", "sketch book", "copybook", "planner", "music book"};
-        String padType;
+        String[] PadTypes = {"", "Sketch book", "Copybook", "Planner"};
         System.out.println("Please select a type of pad to create: \n" +
-                "1 - sketch book\n2 - copybook\n3 - planner\n4 - music book\nInput 0 to EXIT\n");
+                "1 - sketch book\n2 - copybook\n3 - planner\nInput 0 to EXIT\n");
         int userInput = scanner.nextInt();
 
         while (!(userInput < PadTypes.length && userInput > 0)) {
@@ -22,10 +32,8 @@ public class Main {
         }
         padType = PadTypes[userInput];
 
-
         //ask Cover
         String[] Covers = {"", "flexible", "hard"};
-        String cover;
         System.out.println("Please select a cover: \n1 - flexible\n2 - hard\nInput 0 to EXIT\n");
         userInput = scanner.nextInt();
 
@@ -35,11 +43,9 @@ public class Main {
         }
         cover = Covers[userInput];
 
-
         //ask binding
         String[] Bindings = {"", "spring", "glued", "staples"};
-        String binding;
-        System.out.println("Please select a binding: \n1 - spring\n2 - glued\n4 - staples\n0 - input 0 to EXIT\n");
+        System.out.println("Please select a binding: \n1 - spring\n2 - glued\n3 - staples\n0 - input 0 to EXIT\n");
         userInput = scanner.nextInt();
 
         while (!(userInput < Bindings.length && userInput > 0)) {
@@ -48,11 +54,8 @@ public class Main {
         }
         binding = Bindings[userInput];
 
-
         //ask size
         String[] Sizes = {"", "A0", "A1", "A2", "A3", "A4", "A5", "A6"};
-        int width;
-        int height;
         System.out.println("Please select size:\n1 - A0\n2 - A1\n3 - A2\n4 - A3\n5 - A4\n6 - A5\n7 - A6\n" +
                 "0 - input to EXIT\n");
         userInput = scanner.nextInt();
@@ -98,29 +101,23 @@ public class Main {
                 break;
         }
 
-
         //ask density
         System.out.println("Please input a density: ");
-        userInput = scanner.nextInt();
-        int density = userInput;
-
+        density = scanner.nextInt();
 
         //ask sheetsQuantity
-        System.out.println("Please input a sheetsQuantity: ");
-        userInput = scanner.nextInt();
-        int sheetsQuantity = userInput;
+        System.out.println("Please input a quantity of sheets: ");
+        sheetsQuantity = scanner.nextInt();
 
-
-        //ask page color
+        //ask pageColor
         System.out.println("Please input a page color: ");
-        String pageColor = scanner.next();
+        pageColor = scanner.next();
+        sketchbook.setPageColor(pageColor);
 
-
-        //ask pagePattern and isDatedPages
+        //ask pagePattern
         String[] Patterns = {"", "none", "lined", "grid", "dotted"};
-        System.out.println("Please select a pattern: \n1 - none\n2 - lined\n3 - grid\n4 - dotted\nInput 0 to EXIT\n");
+        System.out.println("Please select a pattern:\n1 - none\n2 - lined\n3 - grid\n4 - dotted\nInput 0 to EXIT\n");
         userInput = scanner.nextInt();
-        String pagePattern;
 
         while (!(userInput < Patterns.length && userInput > 0)) {
             System.out.println("Please select other pattern: ");
@@ -128,18 +125,30 @@ public class Main {
         }
         pagePattern = Patterns[userInput];
 
-//        boolean isDatedPages;
-//        if (padType.contentEquals("planner")){
-//            isDatedPages = true;
-//        }
-
         //objects
-//        Sketchbook sketchbook = new Sketchbook(padType, cover, binding, width, height, density, sheetsQuantity, pageColor);
-//        System.out.println(sketchbook.getInfo());
+        sketchbook.setPadType(padType);
+        sketchbook.setCover(cover);
+        sketchbook.setBinding(binding);
+        sketchbook.setWidth(width);
+        sketchbook.setHeight(height);
+        sketchbook.setDensity(density);
+        sketchbook.setSheetsQuantity(sheetsQuantity);
+        sketchbook.setPageColor(pageColor);
+        System.out.println(sketchbook.getPadWeight());
+        System.out.println(sketchbook.getInfo());
 
+        System.out.println();
 
-        Notebook notebook = new Notebook();
-
+        notebook.setPadType(padType);
+        notebook.setCover(cover);
+        notebook.setBinding(binding);
+        notebook.setWidth(width);
+        notebook.setHeight(height);
+        notebook.setDensity(density);
+        notebook.setSheetsQuantity(sheetsQuantity);
+        notebook.setPagePattern(pagePattern);
         System.out.println(notebook.getPadWeight());
+        System.out.println(notebook.getInfo());
+
     }
 }

@@ -34,9 +34,8 @@ public class Notebook extends Pad {
     @Override
     public String getInfo() {
         return String.format("%s\nCover: %s\nBlinding: %s\nSize: %dx%dmm\nPaper density: %dg/m2\nSheets quantity: %d\n" +
-                        "Pages color: %d\nPage pattern: &d", getPadType(), super.getCover(), super.getBinding(),
-                super.getWidth(), super.getHeight(), super.getDensity(), super.getSheetsQuantity(),
-                super.getPadWeight(), pagePattern);
+                        "Page pattern: %s", getPadType(), super.getCover(), super.getBinding(),
+                super.getWidth(), super.getHeight(), super.getDensity(), super.getSheetsQuantity(), this.pagePattern);
     }
 }
 

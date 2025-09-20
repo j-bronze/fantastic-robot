@@ -23,8 +23,9 @@ public class Sketchbook extends Pad {
     @Override
     public String getInfo(){
         return String.format("%s\nCover: %s\nBlinding: %s\nSize: %dx%dmm\nPaper density: %dg/m2\n" +
-                "Sheets quantity: %d\nPages color: %d", super.getPadType(), super.getCover(), super.getBinding(),
+                "Sheets quantity: %d\nPages color: %s", super.getPadType(), super.getCover(), super.getBinding(),
                 super.getWidth(), super.getHeight(), super.getDensity(), super.getSheetsQuantity(),
-                super.getPadWeight(), pageColor);
+                this.pageColor);
     }
+
 }
