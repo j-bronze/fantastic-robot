@@ -3,44 +3,79 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        String myName = "Yauheniya";
-        String mySurname = "Baraznouskaya";
-        String myProfession = "QA Engineer";
-        int yearsOfExperience = 5;
-        String message = String.format("My name is %s %s. I'm a %s with %d years of experience.",
-                myName, mySurname, myProfession, yearsOfExperience);
-
-        System.out.println(message);
-        System.out.println("\nNumber of letters in the message is " + message.length());
-        System.out.println();
-
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Please, enter your name: ");
-        String enteredName = scanner.nextLine();
 
-        boolean enteredStringIsEmpty = enteredName.isEmpty();
-        System.out.println("Is entered string empty? - " + enteredStringIsEmpty);
+    //task1
+        String startMessage = "Please enter a value from 0 to 100:";
+        String warningMessage = "Incorrect value entered. ";
 
-        char singleCharFromString = enteredName.charAt(2);
-        System.out.println("The third char in the entered string is \'" + singleCharFromString + "\'");
+        System.out.println(startMessage);
+        int userInput = scanner.nextInt();
 
-        boolean stringsAreEqual = myName.equals(enteredName);
-        System.out.println("Are two names equal? - " + stringsAreEqual);
+        while (!(userInput >= 0 && userInput <= 100)) {
+            System.out.println(warningMessage);
+            System.out.println(startMessage);
+            userInput = scanner.nextInt();
+        }
+        if (userInput >= 90) {
+            System.out.println("Your grade is A!");
+        } else if (userInput >= 80) {
+            System.out.println("Your grade is B!");
+        } else if (userInput >= 70) {
+            System.out.println("Your grade is C!");
+        } else if (userInput >= 60) {
+            System.out.println("Your grade is D!");
+        } else if (userInput >= 50) {
+            System.out.println("Your grade is E!");
+        } else {
+            System.out.println("Your grade is F!");
+        }
 
-        boolean stringsAreEqualCaseInsensitive = myName.equalsIgnoreCase(enteredName);
-        System.out.println("Are two names equal in case insensitive? - " + stringsAreEqualCaseInsensitive);
 
-        boolean startsWithYa = enteredName.startsWith("Ya");
-        System.out.println("Does name start with \'Ya\'? - " + startsWithYa);
-        boolean endsWithYa = enteredName.endsWith("ya");
-        System.out.println("Does name end with \'ya\'? - " + endsWithYa);
-        boolean containsGo = enteredName.contains("B");
-        System.out.println("Does name contain \'go\'? - " + containsGo);
+    //task2
+        String userValue = "";
+        userValue = scanner.nextLine();
+        while (!(userValue.equalsIgnoreCase("Exit"))) {
+            System.out.print("\nPlease enter something: ");
+            userValue = scanner.nextLine();
+        }
+        System.out.println("You're entered: " + userValue);
 
-        String updatedMessage = message.replace('n','N');
-        System.out.println("Updated message: " + updatedMessage);
 
-        String lowerCaseString = updatedMessage.toLowerCase();
-        System.out.println("To lower case: " + lowerCaseString);
+    //task3
+        System.out.println("\nPlease enter a number: ");
+        int x = scanner.nextInt();
+        int sum = 0;
+
+        if (x > 0) {
+            for (int i = 0; i <= x; i++) {
+                sum += i;
+            }
+        } else {
+            for (int i = 0; i >= x; i--) {
+                sum += i;
+            }
+        }
+        System.out.printf("The sum of all numbers from 0 to %d is %d\n\n", x, sum);
+
+
+    //task4
+        System.out.println(
+                "Choose a channel:\n1 - Discovery\n2 - National Geographic\n3 - Euronews\n4 - Eurosport\n0 - input to EXIT.\nPlease enter a number: ");
+        int userInputChannel = scanner.nextInt();
+        String[] Channels = {"", "Discovery", "National Geographic", "Euronews", "Eurosport"};
+
+        while (userInputChannel != 0) {
+            if (userInputChannel < Channels.length && userInputChannel > 0) {
+                System.out.println("Your choice is: " + Channels[userInputChannel] + "\nPlease choose one more: ");
+                userInputChannel = scanner.nextInt();
+            }
+            if (userInputChannel >= Channels.length || userInputChannel < 0) {
+                System.out.println("Unknown channel! Choose another one: ");
+                userInputChannel = scanner.nextInt();
+            }
+        }
+
+
     }
 }
