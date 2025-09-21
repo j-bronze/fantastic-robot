@@ -1,0 +1,20 @@
+drawing album
+flex
+120
+48
+
+copybook
+flexible
+80
+12
+
+music book
+flexible
+120
+12
+
+sketch book
+hard
+160
+80
+
