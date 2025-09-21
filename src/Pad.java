@@ -9,6 +9,9 @@ public class Pad {
     private int sheetsQuantity;
     private double padWeight;
 
+    public Pad() {
+    }
+
     public String getInfo(){
         return String.format("%s\nPaper: %s\nCover: %s\nBlinding: %s\nSize: %dx%dmm\nPaper density: %dg/m2\n" +
                         "Sheets quantity: %d", padName, paper, cover, binding, width, height, density, sheetsQuantity);
