@@ -1,6 +1,7 @@
+package entity;
+
 public class Pad {
-    String padName;
-    private String paper;
+    private String padType;
     private String cover;
     private String binding;
     private int width;
@@ -9,12 +10,26 @@ public class Pad {
     private int sheetsQuantity;
     private double padWeight;
 
+    public Pad() { }
+
+    public Pad (String padType, String cover, String binding, int width, int height, int density,
+                int sheetsQuantity){
+        this.padType = padType;
+        this.cover = cover;
+        this.binding = binding;
+        this.width = width;
+        this.height = height;
+        this.density = density;
+        this.sheetsQuantity = sheetsQuantity;
+        CalcPadWeight();
+    }
+
     public String getInfo(){
-        return String.format("%s\nPaper: %s\nCover: %s\nBlinding: %s\nSize: %dx%dmm\nPaper density: %dg/m2\n" +
-                        "Sheets quantity: %d", padName, paper, cover, binding, width, height, density, sheetsQuantity);
-    };
-    public String getPaper(){
-        return paper;
+        return String.format("%s\nCover: %s\nBlinding: %s\nSize: %dx%dmm\nPaper density: %dg/m2\n" +
+                        "Sheets quantity: %d", padType, cover, binding, width, height, density, sheetsQuantity);
+    }
+    public String getPadType(){
+        return padType;
     }
     public String getCover(){
         return cover;
@@ -35,8 +50,8 @@ public class Pad {
         return sheetsQuantity;
     }
 
-    public void setPaper(String paper){
-        this.paper = paper;
+    public void setPadType(String padType){
+        this.padType = padType;
     }
     public void setCover(String cover){
         this.cover = cover;
@@ -46,23 +61,23 @@ public class Pad {
     }
     public void setWidth(int width){
         this.width = width;
+        CalcPadWeight();
     }
     public void setHeight(int height){
         this.height = height;
+        CalcPadWeight();
     }
     public void setDensity(int density){
         this.density = density;
+        CalcPadWeight();
     }
     public void setSheetsQuantity(int sheetsQuantity){
         this.sheetsQuantity = sheetsQuantity;
+        CalcPadWeight();
     }
 
-    public void setPadWeight(int width, int height, int density, int sheetsQuantity){
-        this.width = width;
-        this.height = height;
-        this.density = density;
-        this.sheetsQuantity = sheetsQuantity;
-        this.padWeight = width * height * density * sheetsQuantity / 1000000;
+    private void CalcPadWeight(){
+        padWeight = (double) (width * height * density * sheetsQuantity) / 1000000;
     };
 
     public String getPadWeight (){
