@@ -25,14 +25,8 @@ public class Main {
 
             FileWriter writer = new FileWriter("D:\\trainingAQA\\fantastic-robot\\src\\userPads.txt", true);
             writer.write(padType + "\n");
-            writer.close();
-            writer = new FileWriter("D:\\trainingAQA\\fantastic-robot\\src\\userPads.txt", true);
             writer.write(cover + "\n");
-            writer.close();
-            writer = new FileWriter("D:\\trainingAQA\\fantastic-robot\\src\\userPads.txt", true);
             writer.write(density + "\n");
-            writer.close();
-            writer = new FileWriter("D:\\trainingAQA\\fantastic-robot\\src\\userPads.txt", true);
             writer.write(sheetsQuantity + "\n\n");
             writer.close();
         } catch (IOException e) {
